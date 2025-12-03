@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class HistorialPaciente {
     private ArrayList<Receta> recetados;
     private TarjetaSanitaria tarjeta;   
+    private int dni;
 
     public ArrayList<Receta> getRecetados() {
         return recetados;
