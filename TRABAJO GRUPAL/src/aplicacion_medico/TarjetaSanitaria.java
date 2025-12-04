@@ -62,6 +62,10 @@ public class TarjetaSanitaria {
     public HistorialPaciente getHistorial() {
         return historial;
     }
+    
+    public static void verDatos(TarjetaSanitaria tarjeta){
+        
+    }
 
     
 
