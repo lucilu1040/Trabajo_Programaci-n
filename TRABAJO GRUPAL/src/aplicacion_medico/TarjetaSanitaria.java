@@ -4,6 +4,8 @@
  */
 package aplicacion_medico;
 
+import java.util.Scanner;
+
 /**
  *
  * @author l.munozar.2023
@@ -70,9 +72,17 @@ public class TarjetaSanitaria {
     
     //asumimos que el nombre, cip, dni e historial no se pueden modificar
     public void modificarTarjeta() {
+        Scanner s = new Scanner (System.in);
+        System.out.println("Dirección nueva:");
+        String direccion = s.next();
         this.direccion = direccion;
+        System.out.println("Telefono nuevo:");
+        long telefono = s.nextLong();
         this.telefono = telefono;
+        System.out.println("Descuento nuevo:");
+        float descuento = s.nextFloat();
         this.descuento = descuento;
+        s.close();
     }
 
     
