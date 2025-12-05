@@ -10,6 +10,10 @@ import java.time.LocalDate;
  *
  * @author d.lavado.2023
  */
+
+/*Me acabo de dar cuenta de que es probable que muchas de estas funciones hay que cambiar los ==, por metodo equals, pero si 
+se necesita ya lo solucionamos rapido cuando lo probemos, por ahora seguimos mejor con el resto del codigo*/
+
 public class Sistema implements gestionPaciente, gestionMedico, gestionAdministrativo{
     private HistorialConsulta historial;
     private ListaMedicamentos medicamentos;
@@ -105,15 +109,27 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     y que nos lo diera de otra manera para la interfaz gráfica, pero eso es problema de otro momento.
     */
     public void modificarMedicamento(Medicamento medicamento){
-        medicamentos.getMedicamento().modificar(medicamento);
+        int i;
+        for (i = 0; i < medicamentos.getMedicamento().size(); i++) {
+            
+            if (medicamento == medicamentos.getMedicamento().get(i)) {
+                medicamentos.getMedicamento().get(i).modificarMedicamento();
+            }
+        }
     }
     
     public void modificarTarjeta(TarjetaSanitaria tarjeta){
-         tarjetas.getTarjetas().modificar(tarjeta);
+        int i;
+        for (i = 0; i <  tarjetas.getTarjetas().size(); i++) {
+            
+            if (tarjeta ==  tarjetas.getTarjetas().get(i)) {
+                 tarjetas.getTarjetas().get(i).modificarTarjeta();
+            }
+        }
     }
     
     public void verDatos(TarjetaSanitaria tarjeta){
-         int i;
+        int i;
         for (i = 0; i <  tarjetas.getTarjetas().size(); i++) {
             
             if (tarjeta ==  tarjetas.getTarjetas().get(i)) {
@@ -122,6 +138,7 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
         }
     }
     
+    //creo que esta función hay que cambiarla para que tenga sentido buscar por el nombre del medicamento y no el medicamento en si
     public void verMedicamentos(Medicamento medicamento){
         int i;
         for (i = 0; i < medicamentos.getMedicamento().size(); i++) {
