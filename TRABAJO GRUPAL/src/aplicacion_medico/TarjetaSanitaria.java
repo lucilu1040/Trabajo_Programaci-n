@@ -66,6 +66,14 @@ public class TarjetaSanitaria {
     public static void verDatos(TarjetaSanitaria tarjeta){
         
     }
+    
+    
+    //asumimos que el nombre, cip, dni e historial no se pueden modificar
+    public void modificarTarjeta() {
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.descuento = descuento;
+    }
 
     
 
