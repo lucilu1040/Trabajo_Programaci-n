@@ -60,6 +60,14 @@ public class Medicamento {
     }
     
     
+    //asumimos que el nombre del emdicamento, y si es cronico o no no se puedde cambiar
+    public void modificarMedicamento() {
+        this.dosis = dosis;
+        this.frecuencia = frecuencia;
+        this.duracion = duracion;
+    }
+    
+    
     
     
 }
