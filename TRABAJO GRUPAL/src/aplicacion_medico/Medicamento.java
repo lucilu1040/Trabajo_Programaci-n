@@ -4,6 +4,8 @@
  */
 package aplicacion_medico;
 
+import java.util.Scanner;
+
 /**
  *
  * @author l.munozar.2023
@@ -59,12 +61,20 @@ public class Medicamento {
         this.duracion = duracion;
     }
     
-    
+    //ANTES HAY QUE COMPROBAR SI ESTO FUNCIONA QUE NO ESTOY 100% SEGURO 
     //asumimos que el nombre del emdicamento, y si es cronico o no no se puedde cambiar
     public void modificarMedicamento() {
+        Scanner s = new Scanner (System.in);
+        System.out.println("Dosis nueva:");
+        int dosis = s.nextInt();
         this.dosis = dosis;
+        System.out.println("Frecuencia nueva:");
+        int frecuencia = s.nextInt();
         this.frecuencia = frecuencia;
+        System.out.println("Duración nueva:");
+        int duracion = s.nextInt();
         this.duracion = duracion;
+        s.close();
     }
     
     
