@@ -103,7 +103,7 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     }
     /*A partir de aqui hay que añadir metodos que interactuen sobre los sets de cada clase, no lo
     he hecho aquí pq me parecia más apropiado hacerlos en la clase, pero no los he hecho en la clase
-    todavía así que tocará hacerlos jajaja
+    todavía así que tocará hacerlos jajaja----- En principio estan ya, hayq ue comprobar si funcionan
     Tmb, los toString de abajo, y el de arriba, habrá que crearlos tmb en la clase, principalmente para
     que salgan más apropiados y bonitos, y pq quiza luego debería dejar de ser toStrings,
     y que nos lo diera de otra manera para la interfaz gráfica, pero eso es problema de otro momento.
