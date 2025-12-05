@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author l.munozar.2023
  */
 public class HistorialPaciente {
-    private ArrayList<Receta> recetados;
+    private static ArrayList<Receta> recetados;
     private TarjetaSanitaria tarjeta;   
  
 
@@ -23,5 +23,10 @@ public class HistorialPaciente {
         return tarjeta;
     }
     
-    
+    public static void verHistorial(TarjetaSanitaria tarjeta){
+        int i;
+        for(i=0; i<recetados.size();i++){
+            System.out.println(recetados.get(i).toString());
+        }
+    }
 }
