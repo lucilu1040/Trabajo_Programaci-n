@@ -23,6 +23,7 @@ public class HistorialPaciente {
         return tarjeta;
     }
     
+    //Hay que editar este metodo, para que nos de por separado los medicamentos actuales, pasados y vacunas
     public void verHistorial(TarjetaSanitaria tarjeta){
         int i;
         for(i=0; i<recetados.size();i++){
