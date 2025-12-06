@@ -11,6 +11,10 @@ import java.util.ArrayList;
  *
  * @author l.munozar.2023
  */
+
+/*Hay que cambiar cosas de esta clase relacionadas con las recetas, principalmente si eliminamos de por si las recetas
+y metemos fecha en cada objeto de medicamento de por si
+*/
 public class Consulta {
     private String motivo;
     private boolean telefonica;
