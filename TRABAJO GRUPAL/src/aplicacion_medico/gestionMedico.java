@@ -16,7 +16,7 @@ interface gestionMedico {
         
         public void anadirConsulta(Consulta nueva);
         
-        public int dineroRecaudado(int LocalDate);
+        public int dineroRecaudado(LocalDate date);
         
         public Consulta verConsulta(int cip, LocalDate fecha);
             
