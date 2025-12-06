@@ -12,7 +12,9 @@ import java.time.LocalDate;
  */
 
 /*Me acabo de dar cuenta de que es probable que muchas de estas funciones hay que cambiar los ==, por metodo equals, pero si 
-se necesita ya lo solucionamos rapido cuando lo probemos, por ahora seguimos mejor con el resto del codigo*/
+se necesita ya lo solucionamos rapido cuando lo probemos, por ahora seguimos mejor con el resto del codigo
+Tmb vamos a tener que definir todos los toString para que queden, "bonitos" pq por ahora ni estan en las clases,
+he usado el predetermiando en todos*/
 
 public class Sistema implements gestionPaciente, gestionMedico, gestionAdministrativo{
     private HistorialConsulta historial;
@@ -21,11 +23,12 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     
     //este metodo hay que remirarlo, esta mal es el que he dicho del UML AAAAAAAAAA
     //Creo que ya esta bien pero hay que comprobar si funciona
+    //Vale espero que ultimo apunte de esta funcion, pero no se si tiene sentido para luego la construccion, habra que vero
     public void verHistorial(TarjetaSanitaria tarjeta){
         int i;
             for (i=0;i<tarjetas.getTarjetas().size();i++){
                 if (tarjeta == tarjetas.getTarjetas().get(i)){
-                    HistorialPaciente.verHistorial(tarjetas.getTarjetas().get(i));
+                    tarjetas.getTarjetas().get(i).getHistorial().verHistorial(tarjeta);
                 }
     }
                 
