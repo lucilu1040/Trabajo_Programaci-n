@@ -45,13 +45,14 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
         historial.getConsultas().add(nueva);
     }
 
-    public int dineroRecaudado(int LocalDate) {
+    public int dineroRecaudado(LocalDate date) {
         int dineroTotal = 0;
         int i;
         for (i = 0; i < historial.getConsultas().size(); i++) {
-
+            if( date == historial.getConsultas().get(i).getFecha())
+                dineroTotal+=1;
         }
-        dineroTotal = dineroTotal + i * 50;
+        dineroTotal = dineroTotal * 50;
         return dineroTotal;
     }
 
