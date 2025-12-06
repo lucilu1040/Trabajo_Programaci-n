@@ -30,8 +30,9 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     }
                 
     }
+    //Hay que completar el verDatos en TarjetaSanitaria que esta vacio por ahora
     public void verDatosPaciente(TarjetaSanitaria tarjeta){
-        TarjetaSanitaria.verDatos(tarjeta);
+        System.out.println(TarjetaSanitaria.verDatos(tarjeta));
     }
     
     
