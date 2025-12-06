@@ -11,18 +11,24 @@ import java.util.Scanner;
  * @author l.munozar.2023
  */
 public class Medicamento {
+    
+    public enum tipoTratamiento{
+        CRONICO, TEMPORAL
+    }
     private String nombre;
     private int dosis;
     private int frecuencia;
-    private boolean cronico;
+    private tipoTratamiento tipo;
     private int duracion;
 
-    public Medicamento(String nombre, int dosis, int frecuencia, boolean cronico, int duracion) {
+    public Medicamento(String nombre, int dosis, int frecuencia, tipoTratamiento tipo, int duracion) {
         this.nombre = nombre;
         this.dosis = dosis;
         this.frecuencia = frecuencia;
-        this.cronico = cronico;
-        this.duracion = duracion;
+        this.tipo = tipo;
+        if (tipo == tipoTratamiento.TEMPORAL){
+            this.duracion = duracion;
+        }
     }
 
     public String getNombre() {
@@ -37,8 +43,8 @@ public class Medicamento {
         return frecuencia;
     }
 
-    public boolean isCronico() {
-        return cronico;
+    public tipoTratamiento getTipo() {
+        return tipo;
     }
 
     public int getDuracion() {
@@ -51,10 +57,6 @@ public class Medicamento {
 
     public void setFrecuencia(int frecuencia) {
         this.frecuencia = frecuencia;
-    }
-
-    public void setCronico(boolean cronico) {
-        this.cronico = cronico;
     }
 
     public void setDuracion(int duracion) {
