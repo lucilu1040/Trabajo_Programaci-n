@@ -11,8 +11,9 @@ package aplicacion_medico;
 public class Vacuna extends Medicamento {
     private String enfermedad;
 
-    public Vacuna(String nombre, int dosis, int frecuencia, boolean cronico, int duracion,String enfermedad) {
-        super(nombre, dosis, frecuencia, cronico, duracion);
+    //Asumimos que la vacuna no puede ser cronica, y hay que mirr si el valor de duracion sobra tmb o no
+    public Vacuna(String nombre, int dosis, int frecuencia, int duracion,String enfermedad) {
+        super(nombre, dosis, frecuencia,tipoTratamiento.TEMPORAL ,duracion);
         this.enfermedad = enfermedad;
     }
 
