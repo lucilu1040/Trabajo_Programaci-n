@@ -41,6 +41,7 @@ public class HistorialPaciente {
                 System.out.println(recetados.get(i).toString());
             }
         }
+        i = 0;
         for(i=0; i<recetados.size();i++){
             LocalDate fecha = recetados.get(i).getFecha();
             if (hoy.isAfter(fecha.plusDays(recetados.get(i).getMedicamento().getDuracion()))){
