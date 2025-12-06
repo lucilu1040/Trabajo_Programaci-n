@@ -20,6 +20,7 @@ public class Medicamento {
     private int frecuencia;
     private tipoTratamiento tipo;
     private int duracion;
+    //asumimos que la duración esta en dias
 
     public Medicamento(String nombre, int dosis, int frecuencia, tipoTratamiento tipo, int duracion) {
         this.nombre = nombre;
