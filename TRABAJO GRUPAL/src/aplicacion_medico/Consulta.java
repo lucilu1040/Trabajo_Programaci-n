@@ -14,6 +14,10 @@ import java.util.ArrayList;
 
 /*Hay que cambiar cosas de esta clase relacionadas con las recetas, principalmente si eliminamos de por si las recetas
 y metemos fecha en cada objeto de medicamento de por si
+
+VALE, creo que no es necesario, es más creoq ue se gestiona bien lo de las recetas, pero si vemos que en realidad es lioso
+o que realmente si que nos da problemas se elimina y se da hora a las medicinas, pero creo que tiene bastante mas sentido
+con recetas
 */
 public class Consulta {
     
