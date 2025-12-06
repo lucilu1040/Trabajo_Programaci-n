@@ -13,6 +13,12 @@ import java.time.LocalDate;
 public class Receta {
     private LocalDate fecha;
     private Medicamento medicamento;
+    
+    public Receta(Medicamento medicamento){
+        this.medicamento = medicamento;
+        LocalDate hoy = LocalDate.now();
+        this.fecha= hoy;
+    }
 
     public LocalDate getFecha() {
         return fecha;
