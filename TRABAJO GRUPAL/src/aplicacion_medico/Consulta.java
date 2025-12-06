@@ -16,8 +16,12 @@ import java.util.ArrayList;
 y metemos fecha en cada objeto de medicamento de por si
 */
 public class Consulta {
+    
+    public enum TipoConsulta{
+        PRESENCIAL, TELEFONICA
+    }
     private String motivo;
-    private boolean telefonica;
+    private TipoConsulta tipoConsulta;
     private String diagnostico;
     private int cipPaciente;
     private LocalDate fecha;
@@ -25,9 +29,9 @@ public class Consulta {
     private Medico medico;
     private ArrayList<Receta> medicamentos;
     
-    public Consulta(String motivo,String diagnostico, int cipPaciente,LocalDate fecha,int precio,Medico medico){
+    public Consulta(String motivo, TipoConsulta tipo, String diagnostico, int cipPaciente,LocalDate fecha,int precio,Medico medico){
         this.motivo = motivo;
-        this.telefonica = false;
+        this.tipoConsulta = tipo;
         this.diagnostico = diagnostico;
         this.cipPaciente = cipPaciente;
         this.fecha = fecha;
@@ -39,8 +43,8 @@ public class Consulta {
         return motivo;
     }
 
-    public boolean isTelefonica() {
-        return telefonica;
+    public TipoConsulta getTipoConsulta() {
+        return tipoConsulta;
     }
 
     public String getDiagnostico() {
