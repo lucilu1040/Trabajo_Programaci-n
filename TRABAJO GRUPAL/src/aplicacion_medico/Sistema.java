@@ -20,6 +20,7 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     private ListaTarjetas tarjetas;
     
     //este metodo hay que remirarlo, esta mal es el que he dicho del UML AAAAAAAAAA
+    //Creo que ya esta bien pero hay que comprobar si funciona
     public void verHistorial(TarjetaSanitaria tarjeta){
         int i;
             for (i=0;i<tarjetas.getTarjetas().size();i++){
