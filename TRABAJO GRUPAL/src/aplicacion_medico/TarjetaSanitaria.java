@@ -11,25 +11,32 @@ import java.util.Scanner;
  * @author l.munozar.2023
  */
 public class TarjetaSanitaria {
+
+    //creo que es mucho mas fácil usar el enum para el tipo de paciente que hacer clases hijas
+    public enum tipoDescuento{
+        BASIC, ADVANCED, PREMIUM
+    }
     private String nombre;
     private String direccion;
     private long telefono;
     private final int CIP;
     private long DNI;
-    private float descuento;
+    private tipoDescuento descuento;
     private HistorialPaciente historial;
-    
-    public TarjetaSanitaria(String nombre,String direccion,long telefono,int CIP,long DNI,float descuento,HistorialPaciente historial){
+    private static int generadorCIP = 100000;
+
+    public TarjetaSanitaria(String nombre,String direccion,long telefono,long DNI,tipoDescuento descuento,HistorialPaciente historial){
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.CIP = CIP;
+        this.CIP = generadorCIP;
+        generadorCIP+=1;
         this.DNI = DNI;
         this.descuento = descuento;
         this.historial = historial;
     }
-    
-    public  float getDescuento(){
+
+    public  tipoDescuento getDescuento(){
         return descuento;
     }
 
@@ -64,12 +71,13 @@ public class TarjetaSanitaria {
     public HistorialPaciente getHistorial() {
         return historial;
     }
-    
-    public static void verDatos(TarjetaSanitaria tarjeta){
-        
+
+    public static String verDatos(TarjetaSanitaria tarjeta){
+        return "";
+
     }
-    
-    
+
+
     //asumimos que el nombre, cip, dni e historial no se pueden modificar
     public void modificarTarjeta() {
         Scanner s = new Scanner (System.in);
@@ -80,12 +88,19 @@ public class TarjetaSanitaria {
         long telefono = s.nextLong();
         this.telefono = telefono;
         System.out.println("Descuento nuevo:");
-        float descuento = s.nextFloat();
-        this.descuento = descuento;
+        String descuento = s.next();
+        tipoDescuento tipo = tipoDescuento.valueOf(descuento);
+        if(tipo.equals(tipoDescuento.ADVANCED)){
+            this.descuento = tipoDescuento.ADVANCED;
+        } else if(tipo.equals(tipoDescuento.PREMIUM)){
+            this.descuento = tipoDescuento.PREMIUM;
+        } else {
+            this.descuento = tipoDescuento.BASIC;
+        }
         s.close();
     }
 
-    
 
-    
+
+
 }
