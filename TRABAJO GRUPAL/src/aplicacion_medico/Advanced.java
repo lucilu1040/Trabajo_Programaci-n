@@ -10,7 +10,7 @@ package aplicacion_medico;
  */
 public class Advanced extends TarjetaSanitaria{
 
-    public Advanced(String nombre, String direccion, long telefono, int CIP, long DNI, float descuento,HistorialPaciente historial) {
+    public Advanced(String nombre, String direccion, long telefono, long DNI, float descuento,HistorialPaciente historial) {
         super(nombre, direccion, telefono, CIP, DNI, 1250,historial);
     }
     
