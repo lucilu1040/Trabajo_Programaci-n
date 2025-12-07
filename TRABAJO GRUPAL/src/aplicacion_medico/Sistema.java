@@ -6,6 +6,7 @@ package aplicacion_medico;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintStream;
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -212,4 +213,25 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     
      
      //aqui en el UML tiene un metodo más q no se muy bien que es, aqui y en su clase padre, gestionAdmin.
-}
+     
+     
+     
+     //Esta empezado pero espero que lo den en clase pq ahora mismo estoy dudando bastante,
+     // pero algo se apañara si nos e dna en calse, a malas aprecido al año pasado
+     
+     /*public void hacerBackup(String rutaConsulta, String rutaMedicamento, String rutaMedico,
+             String rutaRecetas, String rutaTarjetas){
+         try{
+             FileOutputStream out1 = new FileOutputStream(rutaConsulta);
+             FileOutputStream out2 = new FileOutputStream(rutaMedicamento);
+             FileOutputStream out3 = new FileOutputStream(rutaMedico);
+             FileOutputStream out4 = new FileOutputStream(rutaRecetas);
+             FileOutputStream out5 = new FileOutputStream(rutaTarjetas);
+             ObjectOutputStream consulta = new ObjectOutputStream(out1);
+             consulta.writeObject(HistorialConsulta);
+             consulta.close();
+             out1.close();
+         }*/
+     }
+
+
