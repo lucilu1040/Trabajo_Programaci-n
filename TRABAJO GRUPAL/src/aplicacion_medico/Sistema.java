@@ -160,6 +160,7 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     }
     
     //creo que hay que hacer que lo ordene de otra manera, los dos de abajo
+    //deberia estar ya, hayq  comprobar, y crear los ficheros de texto correspondientes en las carpetas
     public void listadoMedicamentos(){
         try{
             PrintStream flujo;
@@ -207,6 +208,8 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
             System.err.println(ex + "Fichero no encontrado");
         }
     }
+     
+    
      
      //aqui en el UML tiene un metodo más q no se muy bien que es, aqui y en su clase padre, gestionAdmin.
 }
