@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author l.munozar.2023
  */
 public class ListaTarjetas {
-    private ArrayList<TarjetaSanitaria> tarjetas;
+    private ArrayList<TarjetaSanitaria> tarjetas = new ArrayList<>();
 
     public ArrayList<TarjetaSanitaria> getTarjetas() {
         return tarjetas;
