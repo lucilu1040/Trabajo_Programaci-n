@@ -5,17 +5,26 @@
 package aplicacion_medico;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  *
  * @author l.munozar.2023
  */
 public class ListaTarjetas {
-    private ArrayList<TarjetaSanitaria> tarjetas = new ArrayList<>();
+    //creo que este atributo puede ser estatico sin problema pero hay que mirarlo, nos viene bien para
+    // el ordenar porDNI para los listados, que salen por fichero en la clase Sistema
+    private static ArrayList<TarjetaSanitaria> tarjetas = new ArrayList<>();
 
     public ArrayList<TarjetaSanitaria> getTarjetas() {
         return tarjetas;
     }
     
+    public static void ordenarPorDNI(){
+        tarjetas.sort(Comparator.comparingLong(TarjetaSanitaria::getDNI));
+    }
     
+    public static void ordenarPorCIP(){
+        tarjetas.sort(Comparator.comparingInt(TarjetaSanitaria::getCIP));
+    }
 }
