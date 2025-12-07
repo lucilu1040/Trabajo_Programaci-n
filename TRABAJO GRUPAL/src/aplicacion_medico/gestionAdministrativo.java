@@ -29,5 +29,7 @@ interface gestionAdministrativo {
     
     public void listadoMedicamentos();
     
-     public void listadoTarjetas();
+    public void listadoTarjetasCIP();
+    
+    public void listadoTarjetasDNI();
 }
