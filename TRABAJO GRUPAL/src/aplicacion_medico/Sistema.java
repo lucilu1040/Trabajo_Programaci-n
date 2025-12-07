@@ -4,7 +4,11 @@
  */
 package aplicacion_medico;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.time.LocalDate;
+import java.util.Comparator;
 
 /**
  *
@@ -157,16 +161,50 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     
     //creo que hay que hacer que lo ordene de otra manera, los dos de abajo
     public void listadoMedicamentos(){
+        try{
+            PrintStream flujo;
+            flujo = new PrintStream(new FileOutputStream("ListaMedicamentos.txt"));
+        
         int i;
         for (i = 0; i < medicamentos.getMedicamento().size(); i++) {
-            System.out.println(medicamentos.getMedicamento().get(i).toString());
+            flujo.println(medicamentos.getMedicamento().get(i).toString());
+        }
+        flujo.close();
+            
+        }catch (FileNotFoundException ex){
+            System.err.println(ex + "Fichero no encontrado");
         }
     }
     
-     public void listadoTarjetas(){
+    public void listadoTarjetasCIP(){
+        try{
+            PrintStream flujo;
+            flujo = new PrintStream(new FileOutputStream("ListaTarjetasCIP.txt"));
+            
+            ListaTarjetas.ordenarPorCIP();
         int i;
         for (i = 0; i <  tarjetas.getTarjetas().size(); i++) {
-            System.out.println( tarjetas.getTarjetas().get(i).toString());
+            flujo.println( tarjetas.getTarjetas().get(i).toString());
+        }
+        flujo.close();
+        }catch (FileNotFoundException ex){
+            System.err.println(ex + "Fichero no encontrado");
+        }
+    }
+    
+     public void listadoTarjetasDNI(){
+        try{
+            PrintStream flujo;
+            flujo = new PrintStream(new FileOutputStream("ListaTarjetasDNI.txt"));
+            
+            ListaTarjetas.ordenarPorDNI();
+        int i;
+        for (i = 0; i <  tarjetas.getTarjetas().size(); i++) {
+            flujo.println( tarjetas.getTarjetas().get(i).toString());
+        }
+        flujo.close();
+        }catch (FileNotFoundException ex){
+            System.err.println(ex + "Fichero no encontrado");
         }
     }
      
