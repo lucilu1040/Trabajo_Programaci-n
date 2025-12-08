@@ -10,7 +10,7 @@ package aplicacion_medico;
  */
 
 //En principio creo que vamos a eliminar estas clases
-public class Advanced extends TarjetaSanitaria{
+/*public class Advanced extends TarjetaSanitaria{
 
     public Advanced(String nombre, String direccion, long telefono, long DNI, float descuento,HistorialPaciente historial) {
         super(nombre, direccion, telefono, CIP, DNI, 1250,historial);
@@ -20,3 +20,4 @@ public class Advanced extends TarjetaSanitaria{
         
     
 }
+*/
