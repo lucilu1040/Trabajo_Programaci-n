@@ -8,6 +8,10 @@ package aplicacion_medico;
  *
  * @author d.lavado.2023
  */
+/*
+
+Al final creo que no hace falta crear esta clase, por ahora la dejo así
+
 public class Paciente {
     private TarjetaSanitaria tarjeta;
     private HistorialPaciente historial;
@@ -25,3 +29,4 @@ public class Paciente {
         return historial;
     }
 }
+*/
