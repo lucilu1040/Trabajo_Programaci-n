@@ -36,6 +36,7 @@ public class Consulta {
     private ArrayList<Medicamento> medicamentos;
     
     //Hay que modificar esta clase, porque solo nos deja tener un medicamento por consulta, y puede recetar varios
+    //Solucionado en principiooo
     public Consulta(String motivo, TipoConsulta tipo, String diagnostico, int cipPaciente,LocalDate fecha,int precio,Medico medico, TarjetaSanitaria tarjeta, ArrayList<Medicamento> medicamentos){
         this.motivo = motivo;
         this.tipoConsulta = tipo;
