@@ -19,6 +19,10 @@ public class HistorialPaciente {
         this.recetados = new ArrayList<>();
         this.tarjeta = tarjeta;
     }
+    
+    public void agregarReceta(Receta receta){
+        recetados.add(receta);
+    }
  
 
     public ArrayList<Receta> getRecetados() {
