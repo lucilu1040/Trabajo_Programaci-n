@@ -8,6 +8,9 @@ package aplicacion_medico;
  *
  * @author l.munozar.2023
  */
+
+//En principio creo que vamosa  eliminar estas clases
+
 public class Premium extends TarjetaSanitaria{
 
     public Premium(String nombre, String direccion, long telefono, int CIP, long DNI, float descuento,HistorialPaciente historial) {
