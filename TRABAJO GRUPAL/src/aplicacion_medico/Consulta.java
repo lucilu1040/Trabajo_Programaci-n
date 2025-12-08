@@ -33,10 +33,10 @@ public class Consulta {
     private Medico medico;
     //private ArrayList<Receta> medicamentos;
     private TarjetaSanitaria tarjeta ;
-    private Medicamento medicamento;
+    private ArrayList<Medicamento> medicamentos;
     
     //Hay que modificar esta clase, porque solo nos deja tener un medicamento por consulta, y puede recetar varios
-    public Consulta(String motivo, TipoConsulta tipo, String diagnostico, int cipPaciente,LocalDate fecha,int precio,Medico medico, TarjetaSanitaria tarjeta, Medicamento medicamento){
+    public Consulta(String motivo, TipoConsulta tipo, String diagnostico, int cipPaciente,LocalDate fecha,int precio,Medico medico, TarjetaSanitaria tarjeta, ArrayList<Medicamento> medicamentos){
         this.motivo = motivo;
         this.tipoConsulta = tipo;
         this.diagnostico = diagnostico;
@@ -47,10 +47,13 @@ public class Consulta {
         this.tarjeta = tarjeta;
         
         
+        int i;
+        for (i = 0; i < medicamentos.size(); i++) {
+            Receta receta = new Receta(medicamentos.get(i));
+            tarjeta.getHistorial().agregarReceta(receta);
+
+        }
         
-        Receta receta = new Receta(medicamento);
-        
-        tarjeta.getHistorial().agregarReceta(receta);
             
         
     }
