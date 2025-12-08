@@ -8,6 +8,8 @@ package aplicacion_medico;
  *
  * @author l.munozar.2023
  */
+
+//En principio creo que vamos a eliminar estas clases
 public class Advanced extends TarjetaSanitaria{
 
     public Advanced(String nombre, String direccion, long telefono, long DNI, float descuento,HistorialPaciente historial) {
