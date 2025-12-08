@@ -16,7 +16,7 @@ public class ListaTarjetas {
     // el ordenar porDNI para los listados, que salen por fichero en la clase Sistema
     private static ArrayList<TarjetaSanitaria> tarjetas = new ArrayList<>();
 
-    public ArrayList<TarjetaSanitaria> getTarjetas() {
+    public static ArrayList<TarjetaSanitaria> getTarjetas() {
         return tarjetas;
     }
     
