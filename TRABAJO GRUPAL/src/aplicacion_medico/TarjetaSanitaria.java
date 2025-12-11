@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class TarjetaSanitaria {
 
     //creo que es mucho mas fácil usar el enum para el tipo de paciente que hacer clases hijas
-    public enum tipoDescuento{
+    public enum tipoPaciente{
         BASIC, ADVANCED, PREMIUM
     }
     private String nombre;
@@ -21,23 +21,33 @@ public class TarjetaSanitaria {
     private long telefono;
     private final int CIP;
     private long DNI;
-    private tipoDescuento descuento;
+    private tipoPaciente tipo;
+    private double descuento;
     private HistorialPaciente historial;
     private static int generadorCIP = 100000;
 
-    public TarjetaSanitaria(String nombre,String direccion,long telefono,long DNI,tipoDescuento descuento,HistorialPaciente historial){
+    public TarjetaSanitaria(String nombre,String direccion,long telefono,long DNI,tipoPaciente tipo,HistorialPaciente historial){
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.CIP = generadorCIP;
         generadorCIP+=1;
         this.DNI = DNI;
-        this.descuento = descuento;
+        this.tipo = tipo;
+        if (tipo == tipoPaciente.PREMIUM){
+            this.descuento = 0.5;
+        }
+        else if (tipo == tipoPaciente.ADVANCED){
+            this.descuento = 0.75;
+        }
+        else {
+            this.descuento = 1;
+        }
         this.historial = historial;
     }
 
-    public  tipoDescuento getDescuento(){
-        return descuento;
+    public  tipoPaciente getDescuento(){
+        return tipo;
     }
 
     public void setDireccion(String direccion) {
@@ -89,13 +99,16 @@ public class TarjetaSanitaria {
         this.telefono = telefono;
         System.out.println("Descuento nuevo:");
         String descuento = s.next();
-        tipoDescuento tipo = tipoDescuento.valueOf(descuento);
-        if(tipo.equals(tipoDescuento.ADVANCED)){
-            this.descuento = tipoDescuento.ADVANCED;
-        } else if(tipo.equals(tipoDescuento.PREMIUM)){
-            this.descuento = tipoDescuento.PREMIUM;
+        tipoPaciente tipo = tipoPaciente.valueOf(descuento);
+        if(tipo.equals(tipoPaciente.ADVANCED)){
+            this.tipo = tipoPaciente.ADVANCED;
+            this.descuento = 0.5;
+        } else if(tipo.equals(tipoPaciente.PREMIUM)){
+            this.tipo = tipoPaciente.PREMIUM;
+            this.descuento = 0.75;
         } else {
-            this.descuento = tipoDescuento.BASIC;
+            this.tipo = tipoPaciente.BASIC;
+            this.descuento = 1;
         }
         s.close();
     }
