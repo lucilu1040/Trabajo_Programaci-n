@@ -26,7 +26,7 @@ public class TarjetaSanitaria {
     private HistorialPaciente historial;
     private static int generadorCIP = 100000;
 
-    public TarjetaSanitaria(String nombre,String direccion,long telefono,long DNI,tipoPaciente tipo,HistorialPaciente historial){
+    public TarjetaSanitaria(String nombre,String direccion,long telefono,long DNI,tipoPaciente tipo){
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -43,7 +43,7 @@ public class TarjetaSanitaria {
         else {
             this.descuento = 1;
         }
-        this.historial = historial;
+        this.historial = new HistorialPaciente();
     }
 
     public  tipoPaciente getDescuento(){
