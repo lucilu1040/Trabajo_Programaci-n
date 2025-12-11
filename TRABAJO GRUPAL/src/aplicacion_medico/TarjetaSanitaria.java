@@ -46,7 +46,7 @@ public class TarjetaSanitaria {
         this.historial = new HistorialPaciente();
     }
 
-    public  tipoPaciente getDescuento(){
+    public  tipoPaciente getTipoPaciente(){
         return tipo;
     }
 
@@ -85,6 +85,9 @@ public class TarjetaSanitaria {
     public static String verDatos(TarjetaSanitaria tarjeta){
         return "";
 
+    }
+    public double getDescuento(){
+        return descuento;
     }
 
 
