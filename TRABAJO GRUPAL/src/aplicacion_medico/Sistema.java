@@ -36,7 +36,7 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
                     tarjetas.getTarjetas().get(i).getHistorial().verHistorial(tarjeta);
                 }
     }
-                
+         //tarjeta.getHistorial().verHistorial(tarjeta);       
     }
     //Hay que completar el verDatos en TarjetaSanitaria que esta vacio por ahora
     public void verDatosPaciente(TarjetaSanitaria tarjeta){
