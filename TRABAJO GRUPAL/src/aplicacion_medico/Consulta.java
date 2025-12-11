@@ -29,7 +29,7 @@ public class Consulta {
     private String diagnostico;
     private int cipPaciente;
     private LocalDate fecha;
-    private int precio;
+    private double precio;
     private Medico medico;
     //private ArrayList<Receta> medicamentos;
     private TarjetaSanitaria tarjeta ;
@@ -37,13 +37,13 @@ public class Consulta {
     
     //Hay que modificar esta clase, porque solo nos deja tener un medicamento por consulta, y puede recetar varios
     //Solucionado en principiooo
-    public Consulta(String motivo, TipoConsulta tipo, String diagnostico,int precio, Medico medico, TarjetaSanitaria tarjeta, ArrayList<Medicamento> medicamentos){
+    public Consulta(String motivo, TipoConsulta tipo, String diagnostico, Medico medico, TarjetaSanitaria tarjeta, ArrayList<Medicamento> medicamentos){
         this.motivo = motivo;
         this.tipo = tipo;
         this.diagnostico = diagnostico;
         this.cipPaciente = tarjeta.getCIP();
         this.fecha = LocalDate.now();
-        this.precio = precio;
+        this.precio = 50*tarjeta.getDescuento();
         this.medico = medico;
         this.tarjeta = tarjeta;
         
@@ -79,7 +79,7 @@ public class Consulta {
         return fecha;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
