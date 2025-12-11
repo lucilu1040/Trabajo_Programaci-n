@@ -55,9 +55,9 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
         int i;
         for (i = 0; i < historial.getConsultas().size(); i++) {
             if( date == historial.getConsultas().get(i).getFecha())
-                dineroTotal+=1;
+                dineroTotal+=historial.getConsultas().get(i).getPrecio();
         }
-        dineroTotal = dineroTotal * 50;
+        
         return dineroTotal;
     }
 
