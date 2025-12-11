@@ -15,7 +15,7 @@ public class HistorialPaciente {
     private ArrayList<Receta> recetados;
     private TarjetaSanitaria tarjeta;
     
-    public HistorialPaciente(TarjetaSanitaria tarjeta){
+    public HistorialPaciente(){
         this.recetados = new ArrayList<>();
         this.tarjeta = tarjeta;
     }
