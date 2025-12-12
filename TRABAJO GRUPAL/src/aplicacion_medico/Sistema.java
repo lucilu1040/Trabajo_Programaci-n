@@ -30,13 +30,13 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     //Creo que ya esta bien pero hay que comprobar si funciona, miento estaba mal ya lo he cambaido
     //Vale espero que ultimo apunte de esta funcion, pero no se si tiene sentido para luego la construccion, habra que verlo
     public void verHistorial(TarjetaSanitaria tarjeta){
-        int i;
+        /*int i;
             for (i=0;i<tarjetas.getTarjetas().size();i++){
                 if (tarjeta == tarjetas.getTarjetas().get(i)){
                     tarjetas.getTarjetas().get(i).getHistorial().verHistorial(tarjeta);
                 }
-    }
-         //tarjeta.getHistorial().verHistorial(tarjeta);       
+    }*/
+         tarjeta.getHistorial().verHistorial(tarjeta);       
     }
     //Hay que completar el verDatos en TarjetaSanitaria que esta vacio por ahora
     public void verDatosPaciente(TarjetaSanitaria tarjeta){
