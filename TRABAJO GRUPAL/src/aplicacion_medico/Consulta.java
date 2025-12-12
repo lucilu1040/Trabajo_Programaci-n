@@ -53,7 +53,7 @@ public class Consulta {
         int i;
         for (i = 0; i < medicamentos.size(); i++) {
             Receta receta = new Receta(medicamentos.get(i));
-            tarjeta.getHistorial().agregarReceta(receta);
+            tarjeta.getHistorialPaciente().agregarReceta(receta);
 
         }
         
