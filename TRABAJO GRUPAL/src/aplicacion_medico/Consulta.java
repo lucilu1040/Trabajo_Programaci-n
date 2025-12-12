@@ -28,6 +28,7 @@ public class Consulta {
     private TipoConsulta tipo;
     private String diagnostico;
     private int cipPaciente;
+    private int dniPaciente;
     private LocalDate fecha;
     private double precio;
     private Medico medico;
@@ -42,6 +43,7 @@ public class Consulta {
         this.tipo = tipo;
         this.diagnostico = diagnostico;
         this.cipPaciente = tarjeta.getCIP();
+        this.dniPaciente = tarjeta.getDNI();
         this.fecha = LocalDate.now();
         this.precio = 50*tarjeta.getDescuento();
         this.medico = medico;
