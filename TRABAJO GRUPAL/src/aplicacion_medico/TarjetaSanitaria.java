@@ -20,13 +20,13 @@ public class TarjetaSanitaria {
     private String direccion;
     private long telefono;
     private final int CIP;
-    private long DNI;
+    private int DNI;
     private tipoPaciente tipo;
     private double descuento;
     private HistorialPaciente historial;
     private static int generadorCIP = 100000;
 
-    public TarjetaSanitaria(String nombre,String direccion,long telefono,long DNI,tipoPaciente tipo){
+    public TarjetaSanitaria(String nombre,String direccion,long telefono,int DNI,tipoPaciente tipo){
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -74,7 +74,7 @@ public class TarjetaSanitaria {
         return CIP;
     }
 
-    public long getDNI() {
+    public int getDNI() {
         return DNI;
     }
 
