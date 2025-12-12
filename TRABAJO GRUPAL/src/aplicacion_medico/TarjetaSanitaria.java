@@ -23,7 +23,8 @@ public class TarjetaSanitaria {
     private int DNI;
     private tipoPaciente tipo;
     private double descuento;
-    private HistorialPaciente historial;
+    private HistorialPaciente historialPaciente;
+    private HistorialConsulta historialConsulta;
     private static int generadorCIP = 100000;
 
     public TarjetaSanitaria(String nombre,String direccion,long telefono,int DNI,tipoPaciente tipo){
@@ -43,7 +44,8 @@ public class TarjetaSanitaria {
         else {
             this.descuento = 1;
         }
-        this.historial = new HistorialPaciente();
+        this.historialPaciente = new HistorialPaciente();
+        this.historialConsulta = new HistorialConsulta();
     }
 
     public  tipoPaciente getTipoPaciente(){
@@ -78,8 +80,11 @@ public class TarjetaSanitaria {
         return DNI;
     }
 
-    public HistorialPaciente getHistorial() {
-        return historial;
+    public HistorialPaciente getHistorialPaciente() {
+        return historialPaciente;
+    }
+    public HistorialConsulta getHistorialConsulta() {
+        return historialConsulta;
     }
 
     public static String verDatos(TarjetaSanitaria tarjeta){
