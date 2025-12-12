@@ -12,6 +12,10 @@ import java.util.ArrayList;
  */
 public class HistorialConsulta {
     private ArrayList<Consulta> consultas;
+    
+    public HistorialConsulta(){
+        this.consultas = new ArrayList();
+    }
 
     public ArrayList<Consulta> getConsultas() {
         return consultas;
