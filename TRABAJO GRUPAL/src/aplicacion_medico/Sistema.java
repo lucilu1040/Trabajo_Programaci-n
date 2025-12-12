@@ -47,7 +47,8 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     
     
     public void anadirConsulta(Consulta nueva) {
-        historial.getConsultas().add(nueva);
+        //historial.getConsultas().add(nueva);
+        nueva.getTarjeta().getHistorialConsulta().anadirConsulta(nueva);
     }
 
     public int dineroRecaudado(LocalDate date) {
