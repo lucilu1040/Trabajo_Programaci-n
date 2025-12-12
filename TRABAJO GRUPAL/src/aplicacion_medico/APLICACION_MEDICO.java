@@ -23,11 +23,10 @@ public class APLICACION_MEDICO {
         medicamentos1.add(medicamento1);
         Consulta consulta1 = new Consulta("3", Consulta.TipoConsulta.PRESENCIAL, "4", medico1, tarjeta1, medicamentos1);
         Sistema sistema1 = new Sistema();
-        HistorialConsulta historialConsultas = new HistorialConsulta();
+       
         
-        //sistema1.verDatosPaciente(tarjeta1);
-        sistema1.anadirConsulta(consulta1);
-        //sistema1.verHistorial(tarjeta1);
+        sistema1.verDatosPaciente(tarjeta1);
+        
     }
     
 }
