@@ -24,6 +24,9 @@ public class HistorialConsulta {
     public void setConsultas(ArrayList<Consulta> consultas) {
         this.consultas = consultas;
     }
+    public void anadirConsulta(Consulta consulta){
+        consultas.add(consulta);
+    }
     
     
     
