@@ -88,6 +88,9 @@ public class Consulta {
     public Medico getMedico() {
         return medico;
     }
+    public TarjetaSanitaria getTarjeta(){
+        return tarjeta;
+    }
 
     /*public ArrayList<Receta> getMedicamentos() {
         return medicamentos;
