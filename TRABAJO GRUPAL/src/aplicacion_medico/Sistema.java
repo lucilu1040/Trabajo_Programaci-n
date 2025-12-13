@@ -48,8 +48,8 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
          tarjeta.getHistorialPaciente().verHistorial(tarjeta);       
     }
     //Hay que completar el verDatos en TarjetaSanitaria que esta vacio por ahora
-    public void verDatosPaciente(TarjetaSanitaria tarjeta){
-        System.out.println(TarjetaSanitaria.verDatos(tarjeta));
+    public String verDatosPaciente(TarjetaSanitaria tarjeta){
+        return(tarjeta.verDatos(tarjeta));
     }
     
     
