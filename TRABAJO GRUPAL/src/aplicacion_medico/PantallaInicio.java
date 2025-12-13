@@ -1084,9 +1084,22 @@ public class PantallaInicio extends javax.swing.JFrame {
         int cantidad = Integer.parseInt(strCantidad);
         int dosis = Integer.parseInt(strDosis);
         int duracion = Integer.parseInt(strDuracion);
-        Medicamento medicamento = 
-        
-        
+        Medicamento.tipoTratamiento tipoTratamiento = Medicamento.tipoTratamiento.valueOf(tipo);
+        Medicamento medicamento = new Medicamento(nombre, cantidad, dosis, tipoTratamiento, duracion);
+        sistema.anadirMedicamento(medicamento);
+        ,
+        /*
+        He arreglado en pricipio el verMedicamento, y mejorado el anadirMedicamento de sistema, creando otro metodo en
+        listaMedicamentos. Tambien te he terminado este metodo como creo que lo estabas haciendo,
+        no quiero tocar mas por si acaso. 
+        Por cierto, por como lo he creado, y como habias definido, he intuido que cantidad es dosis en la clase
+        medicamento, y dosis es frecuencia no? (Mira los atributos de medicamento si no se me ha entendido),
+        podemos cambiar alguno de los dos o dejarlo asi, no influye.
+        Por ahora en principio nada más, ANIMO ANIMO
+        */
+        /*PD: Te dejo el error de arriba para que lo enceuntres rapido. (Puedes borrar este mensaje,
+        por desgracia no puedo hacer que se autodestruya.... Todavia jijiji)
+        */
        
     }//GEN-LAST:event_btnAnadirMedicamentoFinalActionPerformed
 
