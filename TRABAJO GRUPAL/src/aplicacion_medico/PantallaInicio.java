@@ -65,9 +65,11 @@ public class PantallaInicio extends javax.swing.JFrame {
         PanelIntroducirCIP = new javax.swing.JPanel();
         IntroducirCIP = new javax.swing.JTextField();
         btnEnterCIP = new javax.swing.JButton();
+        btnVolverCIP = new javax.swing.JButton();
         PanelIntroducirDNI = new javax.swing.JPanel();
         btnEnterDNI = new javax.swing.JButton();
         IntroducirDNI = new javax.swing.JTextField();
+        btnVolverDNI = new javax.swing.JButton();
         PanelAnadirMedicamento = new javax.swing.JPanel();
         PanelAnadirTarjeta = new javax.swing.JPanel();
         PanelEliminarMedicamento = new javax.swing.JPanel();
@@ -468,6 +470,13 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
 
+        btnVolverCIP.setText("Volver");
+        btnVolverCIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverCIPActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelIntroducirCIPLayout = new javax.swing.GroupLayout(PanelIntroducirCIP);
         PanelIntroducirCIP.setLayout(PanelIntroducirCIPLayout);
         PanelIntroducirCIPLayout.setHorizontalGroup(
@@ -478,6 +487,10 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnEnterCIP)
                 .addContainerGap(321, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirCIPLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnVolverCIP)
+                .addGap(363, 363, 363))
         );
         PanelIntroducirCIPLayout.setVerticalGroup(
             PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,7 +499,9 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGroup(PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IntroducirCIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEnterCIP))
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(btnVolverCIP)
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelIntroducirCIP, "PanelIntroducirCIP");
@@ -500,16 +515,28 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
 
+        btnVolverDNI.setText("Volver");
+        btnVolverDNI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverDNIActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelIntroducirDNILayout = new javax.swing.GroupLayout(PanelIntroducirDNI);
         PanelIntroducirDNI.setLayout(PanelIntroducirDNILayout);
         PanelIntroducirDNILayout.setHorizontalGroup(
             PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
+            .addGroup(PanelIntroducirDNILayout.createSequentialGroup()
                 .addContainerGap(308, Short.MAX_VALUE)
-                .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(132, 132, 132)
-                .addComponent(btnEnterDNI)
-                .addGap(277, 277, 277))
+                .addGroup(PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
+                        .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(132, 132, 132)
+                        .addComponent(btnEnterDNI)
+                        .addGap(277, 277, 277))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
+                        .addComponent(btnVolverDNI)
+                        .addGap(394, 394, 394))))
         );
         PanelIntroducirDNILayout.setVerticalGroup(
             PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,7 +545,9 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGroup(PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEnterDNI)
                     .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(btnVolverDNI)
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelIntroducirDNI, "PanelIntroducirDNI");
@@ -886,6 +915,16 @@ public class PantallaInicio extends javax.swing.JFrame {
         cardLayout.show(this.getContentPane(), "PanelVerHistorial");
     }//GEN-LAST:event_btnVerHistorialActionPerformed
 
+    private void btnVolverCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverCIPActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelCIPoDNI");
+    }//GEN-LAST:event_btnVolverCIPActionPerformed
+
+    private void btnVolverDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverDNIActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelCIPoDNI");
+    }//GEN-LAST:event_btnVolverDNIActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -964,6 +1003,8 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnVerTodasConsultas;
     private javax.swing.JButton btnVolverAccesoPaciente;
     private javax.swing.JButton btnVolverAdministrativo;
+    private javax.swing.JButton btnVolverCIP;
+    private javax.swing.JButton btnVolverDNI;
     private javax.swing.JButton btnVolverMedico;
     // End of variables declaration//GEN-END:variables
 }
