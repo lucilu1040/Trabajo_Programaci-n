@@ -13,6 +13,8 @@ import java.awt.CardLayout;
 public class PantallaInicio extends javax.swing.JFrame {
     
     private Sistema sistema;
+    private long DNI;
+    private TarjetaSanitaria tarjeta;
     
     public PantallaInicio(){
         sistema = new Sistema();
@@ -63,13 +65,15 @@ public class PantallaInicio extends javax.swing.JFrame {
         btnAccederPorDNI = new javax.swing.JButton();
         btnVolverAccesoPaciente = new javax.swing.JButton();
         PanelIntroducirCIP = new javax.swing.JPanel();
-        IntroducirCIP = new javax.swing.JTextField();
+        txtCIPPaciente = new javax.swing.JTextField();
         btnEnterCIP = new javax.swing.JButton();
         btnVolverCIP = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         PanelIntroducirDNI = new javax.swing.JPanel();
         btnEnterDNI = new javax.swing.JButton();
-        IntroducirDNI = new javax.swing.JTextField();
+        txtDNIPaciente = new javax.swing.JTextField();
         btnVolverDNI = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         PanelAnadirMedicamento = new javax.swing.JPanel();
         PanelAnadirTarjeta = new javax.swing.JPanel();
         PanelEliminarMedicamento = new javax.swing.JPanel();
@@ -87,6 +91,8 @@ public class PantallaInicio extends javax.swing.JFrame {
         PanelVerTodasConsultas = new javax.swing.JPanel();
         PanelVerHistorial = new javax.swing.JPanel();
         PanelVerDatosPaciente = new javax.swing.JPanel();
+        DatosPaciente = new javax.swing.JScrollPane();
+        DatosDelPaciente = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -456,10 +462,10 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         getContentPane().add(PanelCIPoDNI, "PanelCIPoDNI");
 
-        IntroducirCIP.setText("Introducir CIP");
-        IntroducirCIP.addActionListener(new java.awt.event.ActionListener() {
+        txtCIPPaciente.setText("Introducir CIP");
+        txtCIPPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IntroducirCIPActionPerformed(evt);
+                txtCIPPacienteActionPerformed(evt);
             }
         });
 
@@ -477,16 +483,20 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("CIP:");
+
         javax.swing.GroupLayout PanelIntroducirCIPLayout = new javax.swing.GroupLayout(PanelIntroducirCIP);
         PanelIntroducirCIP.setLayout(PanelIntroducirCIPLayout);
         PanelIntroducirCIPLayout.setHorizontalGroup(
             PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelIntroducirCIPLayout.createSequentialGroup()
-                .addGap(380, 380, 380)
-                .addComponent(IntroducirCIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(317, 317, 317)
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
+                .addComponent(txtCIPPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEnterCIP)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirCIPLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVolverCIP)
@@ -497,8 +507,9 @@ public class PantallaInicio extends javax.swing.JFrame {
             .addGroup(PanelIntroducirCIPLayout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addGroup(PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IntroducirCIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEnterCIP))
+                    .addComponent(txtCIPPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEnterCIP)
+                    .addComponent(jLabel2))
                 .addGap(34, 34, 34)
                 .addComponent(btnVolverCIP)
                 .addContainerGap(229, Short.MAX_VALUE))
@@ -507,11 +518,16 @@ public class PantallaInicio extends javax.swing.JFrame {
         getContentPane().add(PanelIntroducirCIP, "PanelIntroducirCIP");
 
         btnEnterDNI.setText("ENTER");
-
-        IntroducirDNI.setText("Introducir DNI");
-        IntroducirDNI.addActionListener(new java.awt.event.ActionListener() {
+        btnEnterDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IntroducirDNIActionPerformed(evt);
+                btnEnterDNIActionPerformed(evt);
+            }
+        });
+
+        txtDNIPaciente.setText("Introducir DNI");
+        txtDNIPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDNIPacienteActionPerformed(evt);
             }
         });
 
@@ -522,16 +538,20 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("DNI:");
+
         javax.swing.GroupLayout PanelIntroducirDNILayout = new javax.swing.GroupLayout(PanelIntroducirDNI);
         PanelIntroducirDNI.setLayout(PanelIntroducirDNILayout);
         PanelIntroducirDNILayout.setHorizontalGroup(
             PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelIntroducirDNILayout.createSequentialGroup()
-                .addContainerGap(308, Short.MAX_VALUE)
+                .addContainerGap(299, Short.MAX_VALUE)
                 .addGroup(PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
-                        .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(132, 132, 132)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtDNIPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100)
                         .addComponent(btnEnterDNI)
                         .addGap(277, 277, 277))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
@@ -544,7 +564,8 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGap(196, 196, 196)
                 .addGroup(PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEnterDNI)
-                    .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDNIPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(43, 43, 43)
                 .addComponent(btnVolverDNI)
                 .addContainerGap(224, Short.MAX_VALUE))
@@ -760,15 +781,25 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         getContentPane().add(PanelVerHistorial, "PanelVerHistorial");
 
+        DatosDelPaciente.setColumns(20);
+        DatosDelPaciente.setRows(5);
+        DatosPaciente.setViewportView(DatosDelPaciente);
+
         javax.swing.GroupLayout PanelVerDatosPacienteLayout = new javax.swing.GroupLayout(PanelVerDatosPaciente);
         PanelVerDatosPaciente.setLayout(PanelVerDatosPacienteLayout);
         PanelVerDatosPacienteLayout.setHorizontalGroup(
             PanelVerDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(PanelVerDatosPacienteLayout.createSequentialGroup()
+                .addGap(249, 249, 249)
+                .addComponent(DatosPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(396, Short.MAX_VALUE))
         );
         PanelVerDatosPacienteLayout.setVerticalGroup(
             PanelVerDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(PanelVerDatosPacienteLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(DatosPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(307, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelVerDatosPaciente, "PanelVerDatosPaciente");
@@ -816,19 +847,20 @@ public class PantallaInicio extends javax.swing.JFrame {
         cardLayout.show(this.getContentPane(), "PanelPrincipal");
     }//GEN-LAST:event_btnVolverAdministrativoActionPerformed
 
-    private void IntroducirCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirCIPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IntroducirCIPActionPerformed
+    private void txtCIPPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCIPPacienteActionPerformed
+        String CIP = txtCIPPaciente.getText();
+    }//GEN-LAST:event_txtCIPPacienteActionPerformed
 
     private void btnEnterCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterCIPActionPerformed
         CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
         cardLayout.show(this.getContentPane(), "PanelPaciente");
     }//GEN-LAST:event_btnEnterCIPActionPerformed
 
-    private void IntroducirDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirDNIActionPerformed
-        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
-        cardLayout.show(this.getContentPane(), "PanelPaciente");
-    }//GEN-LAST:event_IntroducirDNIActionPerformed
+    private void txtDNIPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIPacienteActionPerformed
+        String strDNI = txtDNIPaciente.getText();
+        this.DNI = Long.parseLong(strDNI);
+        
+    }//GEN-LAST:event_txtDNIPacienteActionPerformed
 
     private void btnAnadirMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirMedicamentoActionPerformed
         CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
@@ -908,6 +940,7 @@ public class PantallaInicio extends javax.swing.JFrame {
     private void btnVerDatosPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosPacienteActionPerformed
         CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
         cardLayout.show(this.getContentPane(), "PanelVerDatosPaciente");
+        DatosDelPaciente.setText(sistema.verDatosPaciente(tarjeta));
     }//GEN-LAST:event_btnVerDatosPacienteActionPerformed
 
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
@@ -924,6 +957,20 @@ public class PantallaInicio extends javax.swing.JFrame {
         CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
         cardLayout.show(this.getContentPane(), "PanelCIPoDNI");
     }//GEN-LAST:event_btnVolverDNIActionPerformed
+
+    private void btnEnterDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterDNIActionPerformed
+        for(int i = 0;i<ListaTarjetas.getTarjetas().size();i++){
+            if(ListaTarjetas.getTarjetas().get(i).getDNI()==DNI ){
+                this.tarjeta = ListaTarjetas.getTarjetas().get(i);
+                CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+                cardLayout.show(this.getContentPane(), "PanelPaciente");
+            }else{
+                //Comprobar si hay tiempo
+                CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+                cardLayout.show(this.getContentPane(), "PanelIntroducirDNI");
+            }
+        }
+    }//GEN-LAST:event_btnEnterDNIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -951,8 +998,8 @@ public class PantallaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField IntroducirCIP;
-    private javax.swing.JTextField IntroducirDNI;
+    private javax.swing.JTextArea DatosDelPaciente;
+    private javax.swing.JScrollPane DatosPaciente;
     private javax.swing.JPanel PanelAdministrativo;
     private javax.swing.JPanel PanelAnadirConsulta;
     private javax.swing.JPanel PanelAnadirMedicamento;
@@ -1006,5 +1053,9 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnVolverCIP;
     private javax.swing.JButton btnVolverDNI;
     private javax.swing.JButton btnVolverMedico;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField txtCIPPaciente;
+    private javax.swing.JTextField txtDNIPaciente;
     // End of variables declaration//GEN-END:variables
 }
