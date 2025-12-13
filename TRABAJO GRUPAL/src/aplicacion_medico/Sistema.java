@@ -25,7 +25,16 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     private HistorialConsulta historial;
     private ListaMedicamentos medicamentos;
     private ListaTarjetas tarjetas;
+    private PlantillaMedicos medicos;
     
+        /*public Sistema(HistorialConsulta historial, ListaMedicamentos medicamentos, ListaTarjetas tarjetas,PlantillaMedicos medicos) {
+        this.historial = historial;
+        this.medicamentos = medicamentos;
+        this.tarjetas = tarjetas;
+        this.medicos = medicos;
+    }*/
+   
+
     //este metodo hay que remirarlo, esta mal es el que he dicho del UML AAAAAAAAAA
     //Creo que ya esta bien pero hay que comprobar si funciona, miento estaba mal ya lo he cambaido
     //Vale espero que ultimo apunte de esta funcion, pero no se si tiene sentido para luego la construccion, habra que verlo
