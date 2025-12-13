@@ -11,10 +11,14 @@ import java.util.ArrayList;
  * @author l.munozar.2023
  */
 public class ListaMedicamentos {
-    private ArrayList<Medicamento> medicamento = new ArrayList();
+    private ArrayList<Medicamento> medicamentos = new ArrayList();
 
     public ArrayList<Medicamento> getMedicamento() {
-        return medicamento;
+        return medicamentos;
+    }
+    
+    public void anadirMedicamento(Medicamento medicamento){
+        medicamentos.add(medicamento);
     }
     
     
