@@ -15,6 +15,7 @@ public class PantallaInicio extends javax.swing.JFrame {
     private Sistema sistema;
     private long DNI;
     private TarjetaSanitaria tarjeta;
+    private int CIP;
     
     public PantallaInicio(){
         sistema = new Sistema();
@@ -34,6 +35,7 @@ public class PantallaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField6 = new javax.swing.JTextField();
         PanelPrincipal = new javax.swing.JPanel();
         btnAdministrativo = new javax.swing.JButton();
         btnPaciente = new javax.swing.JButton();
@@ -75,6 +77,18 @@ public class PantallaInicio extends javax.swing.JFrame {
         btnVolverDNI = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         PanelAnadirMedicamento = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
+        txtDosis = new javax.swing.JTextField();
+        txtTipo = new javax.swing.JTextField();
+        txtDuracion = new javax.swing.JTextField();
+        btnAnadirMedicamentoFinal = new javax.swing.JButton();
+        btnVolverMedicamento = new javax.swing.JButton();
         PanelAnadirTarjeta = new javax.swing.JPanel();
         PanelEliminarMedicamento = new javax.swing.JPanel();
         PanelEliminarTarjeta = new javax.swing.JPanel();
@@ -93,6 +107,8 @@ public class PantallaInicio extends javax.swing.JFrame {
         PanelVerDatosPaciente = new javax.swing.JPanel();
         DatosPaciente = new javax.swing.JScrollPane();
         DatosDelPaciente = new javax.swing.JTextArea();
+
+        jTextField6.setText("jTextField6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -462,7 +478,6 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         getContentPane().add(PanelCIPoDNI, "PanelCIPoDNI");
 
-        txtCIPPaciente.setText("Introducir CIP");
         txtCIPPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCIPPacienteActionPerformed(evt);
@@ -496,7 +511,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addComponent(txtCIPPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnEnterCIP)
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(361, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirCIPLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVolverCIP)
@@ -524,7 +539,6 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
 
-        txtDNIPaciente.setText("Introducir DNI");
         txtDNIPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDNIPacienteActionPerformed(evt);
@@ -545,7 +559,7 @@ public class PantallaInicio extends javax.swing.JFrame {
         PanelIntroducirDNILayout.setHorizontalGroup(
             PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelIntroducirDNILayout.createSequentialGroup()
-                .addContainerGap(299, Short.MAX_VALUE)
+                .addContainerGap(325, Short.MAX_VALUE)
                 .addGroup(PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -573,15 +587,89 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         getContentPane().add(PanelIntroducirDNI, "PanelIntroducirDNI");
 
+        jLabel3.setText("Nombre:");
+
+        jLabel4.setText("Cantidad:");
+
+        jLabel5.setText("Dosis Diarias:");
+
+        jLabel6.setText("TEMPORAL o CRÓNICO:");
+
+        jLabel7.setText("Duración(si es temporal):");
+
+        btnAnadirMedicamentoFinal.setText("Añadir Medicamento");
+        btnAnadirMedicamentoFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnadirMedicamentoFinalActionPerformed(evt);
+            }
+        });
+
+        btnVolverMedicamento.setText("Volver");
+        btnVolverMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverMedicamentoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelAnadirMedicamentoLayout = new javax.swing.GroupLayout(PanelAnadirMedicamento);
         PanelAnadirMedicamento.setLayout(PanelAnadirMedicamentoLayout);
         PanelAnadirMedicamentoLayout.setHorizontalGroup(
             PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 879, Short.MAX_VALUE)
+            .addGroup(PanelAnadirMedicamentoLayout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PanelAnadirMedicamentoLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAnadirMedicamentoLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAnadirMedicamentoLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAnadirMedicamentoLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAnadirMedicamentoLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(73, 73, 73)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(167, 167, 167)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAnadirMedicamentoFinal)
+                    .addComponent(btnVolverMedicamento))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         PanelAnadirMedicamentoLayout.setVerticalGroup(
             PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addGroup(PanelAnadirMedicamentoLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAnadirMedicamentoFinal))
+                .addGap(18, 18, 18)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVolverMedicamento))
+                .addGap(18, 18, 18)
+                .addGroup(PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelAnadirMedicamento, "PanelAnadirMedicamento");
@@ -848,12 +936,22 @@ public class PantallaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverAdministrativoActionPerformed
 
     private void txtCIPPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCIPPacienteActionPerformed
-        String CIP = txtCIPPaciente.getText();
+        String strCIP = txtCIPPaciente.getText();
+        this.CIP = Integer.parseInt(strCIP);
     }//GEN-LAST:event_txtCIPPacienteActionPerformed
 
     private void btnEnterCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterCIPActionPerformed
-        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
-        cardLayout.show(this.getContentPane(), "PanelPaciente");
+        for(int i = 0;i<ListaTarjetas.getTarjetas().size();i++){
+            if(ListaTarjetas.getTarjetas().get(i).getCIP()==CIP ){
+                this.tarjeta = ListaTarjetas.getTarjetas().get(i);
+                CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+                cardLayout.show(this.getContentPane(), "PanelPaciente");
+            }else{
+                //Comprobar si hay tiempo
+                CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+                cardLayout.show(this.getContentPane(), "PanelIntroducirCIP");
+            }
+        }
     }//GEN-LAST:event_btnEnterCIPActionPerformed
 
     private void txtDNIPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIPacienteActionPerformed
@@ -972,6 +1070,26 @@ public class PantallaInicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEnterDNIActionPerformed
 
+    private void btnVolverMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMedicamentoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelAdministrativo");
+    }//GEN-LAST:event_btnVolverMedicamentoActionPerformed
+
+    private void btnAnadirMedicamentoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirMedicamentoFinalActionPerformed
+        String nombre = txtNombre.getText();
+        String strCantidad = txtCantidad.getText();
+        String strDosis = txtDosis.getText();
+        String tipo = txtTipo.getText().toUpperCase();
+        String strDuracion = txtDuracion.getText();
+        int cantidad = Integer.parseInt(strCantidad);
+        int dosis = Integer.parseInt(strDosis);
+        int duracion = Integer.parseInt(strDuracion);
+        Medicamento medicamento = 
+        
+        
+       
+    }//GEN-LAST:event_btnAnadirMedicamentoFinalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1029,6 +1147,7 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnAdministrativo;
     private javax.swing.JButton btnAnadirConsulta;
     private javax.swing.JButton btnAnadirMedicamento;
+    private javax.swing.JButton btnAnadirMedicamentoFinal;
     private javax.swing.JButton btnAnadirTarjeta;
     private javax.swing.JButton btnDineroRecaudado;
     private javax.swing.JButton btnEliminarMedicamento;
@@ -1052,10 +1171,22 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnVolverAdministrativo;
     private javax.swing.JButton btnVolverCIP;
     private javax.swing.JButton btnVolverDNI;
+    private javax.swing.JButton btnVolverMedicamento;
     private javax.swing.JButton btnVolverMedico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField txtCIPPaciente;
+    private javax.swing.JTextField txtCantidad;
     private javax.swing.JTextField txtDNIPaciente;
+    private javax.swing.JTextField txtDosis;
+    private javax.swing.JTextField txtDuracion;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }
