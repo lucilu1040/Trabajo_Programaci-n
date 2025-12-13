@@ -96,7 +96,7 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     
     
     public void anadirMedicamento(Medicamento nuevo){
-        medicamentos.getMedicamento().add(nuevo);
+        medicamentos.anadirMedicamento(nuevo);
     }
     
     public void anadirTarjeta(TarjetaSanitaria nueva){
