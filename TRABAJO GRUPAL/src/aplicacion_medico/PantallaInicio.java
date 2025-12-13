@@ -4,6 +4,8 @@
  */
 package aplicacion_medico;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author l.munozar.2023
@@ -44,7 +46,7 @@ public class PantallaInicio extends javax.swing.JFrame {
         btnVerDatos = new javax.swing.JButton();
         btnVerMedicamentos = new javax.swing.JButton();
         btnListadoMedicamentos = new javax.swing.JButton();
-        btnListadoTarjetasCIp = new javax.swing.JButton();
+        btnListadoTarjetasCIP = new javax.swing.JButton();
         btnListadoTarjetasDNI = new javax.swing.JButton();
         btnVolverAdministrativo = new javax.swing.JButton();
         PanelMedico = new javax.swing.JPanel();
@@ -54,22 +56,59 @@ public class PantallaInicio extends javax.swing.JFrame {
         btnVerTodasConsultas = new javax.swing.JButton();
         btnVolverMedico = new javax.swing.JButton();
         PanelPaciente = new javax.swing.JPanel();
-        btnVerHistorial = new javax.swing.JButton();
         btnVerDatosPaciente = new javax.swing.JButton();
-        btnVolverPaciente = new javax.swing.JButton();
+        btnVerHistorial = new javax.swing.JButton();
         PanelCIPoDNI = new javax.swing.JPanel();
         btnAccederPorCIP = new javax.swing.JButton();
         btnAccederPorDNI = new javax.swing.JButton();
         btnVolverAccesoPaciente = new javax.swing.JButton();
+        PanelIntroducirCIP = new javax.swing.JPanel();
+        IntroducirCIP = new javax.swing.JTextField();
+        btnEnterCIP = new javax.swing.JButton();
+        PanelIntroducirDNI = new javax.swing.JPanel();
+        btnEnterDNI = new javax.swing.JButton();
+        IntroducirDNI = new javax.swing.JTextField();
+        PanelAnadirMedicamento = new javax.swing.JPanel();
+        PanelAnadirTarjeta = new javax.swing.JPanel();
+        PanelEliminarMedicamento = new javax.swing.JPanel();
+        PanelEliminarTarjeta = new javax.swing.JPanel();
+        PanelModificarMedicamento = new javax.swing.JPanel();
+        PanelModificarTarjeta = new javax.swing.JPanel();
+        PanelVerDatos = new javax.swing.JPanel();
+        PanelVerMedicamentos = new javax.swing.JPanel();
+        PanelListadoMedicamentos = new javax.swing.JPanel();
+        PanelListadoTarjetasCIP = new javax.swing.JPanel();
+        PanelListadoTarjetasDNI = new javax.swing.JPanel();
+        PanelAnadirConsulta = new javax.swing.JPanel();
+        PanelDineroRecaudado = new javax.swing.JPanel();
+        PanelVerConsulta = new javax.swing.JPanel();
+        PanelVerTodasConsultas = new javax.swing.JPanel();
+        PanelVerHistorial = new javax.swing.JPanel();
+        PanelVerDatosPaciente = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
         btnAdministrativo.setText("Gestión Administrativo");
+        btnAdministrativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdministrativoActionPerformed(evt);
+            }
+        });
 
         btnPaciente.setText("Gestión Paciente");
+        btnPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPacienteActionPerformed(evt);
+            }
+        });
 
         btnMedico.setText("Gestión Médico");
+        btnMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMedicoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
@@ -81,7 +120,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                     .addComponent(btnAdministrativo)
                     .addComponent(btnPaciente)
                     .addComponent(btnMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(263, Short.MAX_VALUE))
         );
 
         PanelPrincipalLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAdministrativo, btnMedico, btnPaciente});
@@ -95,7 +134,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addComponent(btnPaciente)
                 .addGap(77, 77, 77)
                 .addComponent(btnMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PanelPrincipalLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAdministrativo, btnMedico, btnPaciente});
@@ -103,28 +142,88 @@ public class PantallaInicio extends javax.swing.JFrame {
         getContentPane().add(PanelPrincipal, "PanelPrincipal");
 
         btnAnadirMedicamento.setText("Añadir Medicamento");
+        btnAnadirMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnadirMedicamentoActionPerformed(evt);
+            }
+        });
 
         btnAnadirTarjeta.setText("Añadir Tarjeta");
+        btnAnadirTarjeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnadirTarjetaActionPerformed(evt);
+            }
+        });
 
         btnEliminarMedicamento.setText("Eliminar Medicamento");
+        btnEliminarMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMedicamentoActionPerformed(evt);
+            }
+        });
 
         btnEliminarTarjeta.setText("Eliminar Tarjeta");
+        btnEliminarTarjeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarTarjetaActionPerformed(evt);
+            }
+        });
 
         btnModificarMedicamento.setText("Modificar Medicamento");
+        btnModificarMedicamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarMedicamentoActionPerformed(evt);
+            }
+        });
 
         btnModificarTarjeta.setText("Modificar Tarjeta");
+        btnModificarTarjeta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarTarjetaActionPerformed(evt);
+            }
+        });
 
         btnVerDatos.setText("Ver Datos");
+        btnVerDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerDatosActionPerformed(evt);
+            }
+        });
 
         btnVerMedicamentos.setText("Ver Medicamentos");
+        btnVerMedicamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerMedicamentosActionPerformed(evt);
+            }
+        });
 
         btnListadoMedicamentos.setText("Listado Medicamentos");
+        btnListadoMedicamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListadoMedicamentosActionPerformed(evt);
+            }
+        });
 
-        btnListadoTarjetasCIp.setText("Listado Tarjetas Ordenadas Por CIP");
+        btnListadoTarjetasCIP.setText("Listado Tarjetas Ordenadas Por CIP");
+        btnListadoTarjetasCIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListadoTarjetasCIPActionPerformed(evt);
+            }
+        });
 
         btnListadoTarjetasDNI.setText("Listado Tarjetas Ordenadas Por DNI");
+        btnListadoTarjetasDNI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListadoTarjetasDNIActionPerformed(evt);
+            }
+        });
 
         btnVolverAdministrativo.setText("Volver");
+        btnVolverAdministrativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAdministrativoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelAdministrativoLayout = new javax.swing.GroupLayout(PanelAdministrativo);
         PanelAdministrativo.setLayout(PanelAdministrativoLayout);
@@ -146,7 +245,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                                 .addComponent(btnVerMedicamentos))
                             .addGroup(PanelAdministrativoLayout.createSequentialGroup()
                                 .addComponent(btnAnadirTarjeta)
-                                .addGap(18, 722, Short.MAX_VALUE)
+                                .addGap(18, 498, Short.MAX_VALUE)
                                 .addGroup(PanelAdministrativoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnModificarTarjeta)
                                     .addComponent(btnEliminarMedicamento))))
@@ -154,7 +253,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                     .addGroup(PanelAdministrativoLayout.createSequentialGroup()
                         .addComponent(btnListadoMedicamentos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnListadoTarjetasCIp)
+                        .addComponent(btnListadoTarjetasCIP)
                         .addGap(86, 86, 86))
                     .addGroup(PanelAdministrativoLayout.createSequentialGroup()
                         .addComponent(btnModificarMedicamento)
@@ -187,25 +286,50 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(PanelAdministrativoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListadoMedicamentos)
-                    .addComponent(btnListadoTarjetasCIp))
+                    .addComponent(btnListadoTarjetasCIP))
                 .addGap(18, 18, 18)
                 .addGroup(PanelAdministrativoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListadoTarjetasDNI)
                     .addComponent(btnVolverAdministrativo))
-                .addContainerGap(393, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelAdministrativo, "PanelAdministrativo");
 
         btnAnadirConsulta.setText("Añadir Consulta");
+        btnAnadirConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnadirConsultaActionPerformed(evt);
+            }
+        });
 
         btnDineroRecaudado.setText("Dinero Recaudado");
+        btnDineroRecaudado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDineroRecaudadoActionPerformed(evt);
+            }
+        });
 
         btnVerConsulta.setText("Ver Consulta");
+        btnVerConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerConsultaActionPerformed(evt);
+            }
+        });
 
         btnVerTodasConsultas.setText("Ver Todas Las Consultas");
+        btnVerTodasConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerTodasConsultasActionPerformed(evt);
+            }
+        });
 
         btnVolverMedico.setText("Volver");
+        btnVolverMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverMedicoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelMedicoLayout = new javax.swing.GroupLayout(PanelMedico);
         PanelMedico.setLayout(PanelMedicoLayout);
@@ -216,7 +340,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGroup(PanelMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAnadirConsulta)
                     .addComponent(btnVerConsulta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 675, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 451, Short.MAX_VALUE)
                 .addGroup(PanelMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDineroRecaudado)
                     .addComponent(btnVerTodasConsultas))
@@ -237,12 +361,19 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGroup(PanelMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVerConsulta)
                     .addComponent(btnVerTodasConsultas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 355, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
                 .addComponent(btnVolverMedico)
                 .addGap(64, 64, 64))
         );
 
         getContentPane().add(PanelMedico, "PanelMedico");
+
+        btnVerDatosPaciente.setText("Ver Datos Del Paciente");
+        btnVerDatosPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerDatosPacienteActionPerformed(evt);
+            }
+        });
 
         btnVerHistorial.setText("Ver Historial");
         btnVerHistorial.addActionListener(new java.awt.event.ActionListener() {
@@ -251,48 +382,51 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
 
-        btnVerDatosPaciente.setText("Ver Datos");
-
-        btnVolverPaciente.setText("Volver");
-
         javax.swing.GroupLayout PanelPacienteLayout = new javax.swing.GroupLayout(PanelPaciente);
         PanelPaciente.setLayout(PanelPacienteLayout);
         PanelPacienteLayout.setHorizontalGroup(
             PanelPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPacienteLayout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(btnVolverPaciente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(PanelPacienteLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
+                .addGap(195, 195, 195)
                 .addComponent(btnVerHistorial)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPacienteLayout.createSequentialGroup()
+                .addContainerGap(588, Short.MAX_VALUE)
                 .addComponent(btnVerDatosPaciente)
-                .addGap(131, 131, 131))
+                .addGap(143, 143, 143))
         );
         PanelPacienteLayout.setVerticalGroup(
             PanelPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPacienteLayout.createSequentialGroup()
-                .addGroup(PanelPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelPacienteLayout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(btnVerHistorial)
-                        .addGap(88, 88, 88))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPacienteLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnVerDatosPaciente)
-                        .addGap(78, 78, 78)))
-                .addComponent(btnVolverPaciente)
-                .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPacienteLayout.createSequentialGroup()
+                .addGap(179, 179, 179)
+                .addComponent(btnVerHistorial)
+                .addGap(30, 30, 30)
+                .addComponent(btnVerDatosPaciente)
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelPaciente, "PanelPaciente");
 
         btnAccederPorCIP.setText("Acceder Por CIP");
+        btnAccederPorCIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccederPorCIPActionPerformed(evt);
+            }
+        });
 
         btnAccederPorDNI.setText("Acceder Por DNI");
+        btnAccederPorDNI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccederPorDNIActionPerformed(evt);
+            }
+        });
 
         btnVolverAccesoPaciente.setText("Volver");
+        btnVolverAccesoPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAccesoPacienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelCIPoDNILayout = new javax.swing.GroupLayout(PanelCIPoDNI);
         PanelCIPoDNI.setLayout(PanelCIPoDNILayout);
@@ -304,7 +438,7 @@ public class PantallaInicio extends javax.swing.JFrame {
                     .addComponent(btnVolverAccesoPaciente)
                     .addComponent(btnAccederPorDNI)
                     .addComponent(btnAccederPorCIP))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(486, Short.MAX_VALUE))
         );
         PanelCIPoDNILayout.setVerticalGroup(
             PanelCIPoDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,16 +449,441 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addComponent(btnAccederPorDNI)
                 .addGap(89, 89, 89)
                 .addComponent(btnVolverAccesoPaciente)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelCIPoDNI, "PanelCIPoDNI");
 
+        IntroducirCIP.setText("Introducir CIP");
+        IntroducirCIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntroducirCIPActionPerformed(evt);
+            }
+        });
+
+        btnEnterCIP.setText("ENTER");
+        btnEnterCIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnterCIPActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelIntroducirCIPLayout = new javax.swing.GroupLayout(PanelIntroducirCIP);
+        PanelIntroducirCIP.setLayout(PanelIntroducirCIPLayout);
+        PanelIntroducirCIPLayout.setHorizontalGroup(
+            PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelIntroducirCIPLayout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addComponent(IntroducirCIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEnterCIP)
+                .addContainerGap(321, Short.MAX_VALUE))
+        );
+        PanelIntroducirCIPLayout.setVerticalGroup(
+            PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelIntroducirCIPLayout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addGroup(PanelIntroducirCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IntroducirCIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEnterCIP))
+                .addContainerGap(286, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(PanelIntroducirCIP, "PanelIntroducirCIP");
+
+        btnEnterDNI.setText("ENTER");
+
+        IntroducirDNI.setText("Introducir DNI");
+        IntroducirDNI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntroducirDNIActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelIntroducirDNILayout = new javax.swing.GroupLayout(PanelIntroducirDNI);
+        PanelIntroducirDNI.setLayout(PanelIntroducirDNILayout);
+        PanelIntroducirDNILayout.setHorizontalGroup(
+            PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelIntroducirDNILayout.createSequentialGroup()
+                .addContainerGap(308, Short.MAX_VALUE)
+                .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132)
+                .addComponent(btnEnterDNI)
+                .addGap(277, 277, 277))
+        );
+        PanelIntroducirDNILayout.setVerticalGroup(
+            PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelIntroducirDNILayout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addGroup(PanelIntroducirDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEnterDNI)
+                    .addComponent(IntroducirDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(290, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(PanelIntroducirDNI, "PanelIntroducirDNI");
+
+        javax.swing.GroupLayout PanelAnadirMedicamentoLayout = new javax.swing.GroupLayout(PanelAnadirMedicamento);
+        PanelAnadirMedicamento.setLayout(PanelAnadirMedicamentoLayout);
+        PanelAnadirMedicamentoLayout.setHorizontalGroup(
+            PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelAnadirMedicamentoLayout.setVerticalGroup(
+            PanelAnadirMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelAnadirMedicamento, "PanelAnadirMedicamento");
+
+        javax.swing.GroupLayout PanelAnadirTarjetaLayout = new javax.swing.GroupLayout(PanelAnadirTarjeta);
+        PanelAnadirTarjeta.setLayout(PanelAnadirTarjetaLayout);
+        PanelAnadirTarjetaLayout.setHorizontalGroup(
+            PanelAnadirTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelAnadirTarjetaLayout.setVerticalGroup(
+            PanelAnadirTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelAnadirTarjeta, "PanelAnadirTarjeta");
+
+        javax.swing.GroupLayout PanelEliminarMedicamentoLayout = new javax.swing.GroupLayout(PanelEliminarMedicamento);
+        PanelEliminarMedicamento.setLayout(PanelEliminarMedicamentoLayout);
+        PanelEliminarMedicamentoLayout.setHorizontalGroup(
+            PanelEliminarMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelEliminarMedicamentoLayout.setVerticalGroup(
+            PanelEliminarMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelEliminarMedicamento, "PanelEliminarMedicamento");
+
+        javax.swing.GroupLayout PanelEliminarTarjetaLayout = new javax.swing.GroupLayout(PanelEliminarTarjeta);
+        PanelEliminarTarjeta.setLayout(PanelEliminarTarjetaLayout);
+        PanelEliminarTarjetaLayout.setHorizontalGroup(
+            PanelEliminarTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelEliminarTarjetaLayout.setVerticalGroup(
+            PanelEliminarTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelEliminarTarjeta, "PanelEliminarTarjeta");
+
+        javax.swing.GroupLayout PanelModificarMedicamentoLayout = new javax.swing.GroupLayout(PanelModificarMedicamento);
+        PanelModificarMedicamento.setLayout(PanelModificarMedicamentoLayout);
+        PanelModificarMedicamentoLayout.setHorizontalGroup(
+            PanelModificarMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelModificarMedicamentoLayout.setVerticalGroup(
+            PanelModificarMedicamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelModificarMedicamento, "card13");
+
+        javax.swing.GroupLayout PanelModificarTarjetaLayout = new javax.swing.GroupLayout(PanelModificarTarjeta);
+        PanelModificarTarjeta.setLayout(PanelModificarTarjetaLayout);
+        PanelModificarTarjetaLayout.setHorizontalGroup(
+            PanelModificarTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelModificarTarjetaLayout.setVerticalGroup(
+            PanelModificarTarjetaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelModificarTarjeta, "PanelModificarTarjeta");
+
+        javax.swing.GroupLayout PanelVerDatosLayout = new javax.swing.GroupLayout(PanelVerDatos);
+        PanelVerDatos.setLayout(PanelVerDatosLayout);
+        PanelVerDatosLayout.setHorizontalGroup(
+            PanelVerDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelVerDatosLayout.setVerticalGroup(
+            PanelVerDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelVerDatos, "PanelVerDatos");
+
+        javax.swing.GroupLayout PanelVerMedicamentosLayout = new javax.swing.GroupLayout(PanelVerMedicamentos);
+        PanelVerMedicamentos.setLayout(PanelVerMedicamentosLayout);
+        PanelVerMedicamentosLayout.setHorizontalGroup(
+            PanelVerMedicamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelVerMedicamentosLayout.setVerticalGroup(
+            PanelVerMedicamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelVerMedicamentos, "PanelVerMedicamentos");
+
+        javax.swing.GroupLayout PanelListadoMedicamentosLayout = new javax.swing.GroupLayout(PanelListadoMedicamentos);
+        PanelListadoMedicamentos.setLayout(PanelListadoMedicamentosLayout);
+        PanelListadoMedicamentosLayout.setHorizontalGroup(
+            PanelListadoMedicamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelListadoMedicamentosLayout.setVerticalGroup(
+            PanelListadoMedicamentosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelListadoMedicamentos, "PanelListadoMedicamentos");
+
+        javax.swing.GroupLayout PanelListadoTarjetasCIPLayout = new javax.swing.GroupLayout(PanelListadoTarjetasCIP);
+        PanelListadoTarjetasCIP.setLayout(PanelListadoTarjetasCIPLayout);
+        PanelListadoTarjetasCIPLayout.setHorizontalGroup(
+            PanelListadoTarjetasCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelListadoTarjetasCIPLayout.setVerticalGroup(
+            PanelListadoTarjetasCIPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelListadoTarjetasCIP, "PanelListadoTarjetasCIP");
+
+        javax.swing.GroupLayout PanelListadoTarjetasDNILayout = new javax.swing.GroupLayout(PanelListadoTarjetasDNI);
+        PanelListadoTarjetasDNI.setLayout(PanelListadoTarjetasDNILayout);
+        PanelListadoTarjetasDNILayout.setHorizontalGroup(
+            PanelListadoTarjetasDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelListadoTarjetasDNILayout.setVerticalGroup(
+            PanelListadoTarjetasDNILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelListadoTarjetasDNI, "PanelListadoTarjetasDNI");
+
+        javax.swing.GroupLayout PanelAnadirConsultaLayout = new javax.swing.GroupLayout(PanelAnadirConsulta);
+        PanelAnadirConsulta.setLayout(PanelAnadirConsultaLayout);
+        PanelAnadirConsultaLayout.setHorizontalGroup(
+            PanelAnadirConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelAnadirConsultaLayout.setVerticalGroup(
+            PanelAnadirConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelAnadirConsulta, "PanelAnadirConsultas");
+
+        javax.swing.GroupLayout PanelDineroRecaudadoLayout = new javax.swing.GroupLayout(PanelDineroRecaudado);
+        PanelDineroRecaudado.setLayout(PanelDineroRecaudadoLayout);
+        PanelDineroRecaudadoLayout.setHorizontalGroup(
+            PanelDineroRecaudadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelDineroRecaudadoLayout.setVerticalGroup(
+            PanelDineroRecaudadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelDineroRecaudado, "PanelDineroRecaudado");
+
+        javax.swing.GroupLayout PanelVerConsultaLayout = new javax.swing.GroupLayout(PanelVerConsulta);
+        PanelVerConsulta.setLayout(PanelVerConsultaLayout);
+        PanelVerConsultaLayout.setHorizontalGroup(
+            PanelVerConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelVerConsultaLayout.setVerticalGroup(
+            PanelVerConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelVerConsulta, "PanelVerConsulta");
+
+        javax.swing.GroupLayout PanelVerTodasConsultasLayout = new javax.swing.GroupLayout(PanelVerTodasConsultas);
+        PanelVerTodasConsultas.setLayout(PanelVerTodasConsultasLayout);
+        PanelVerTodasConsultasLayout.setHorizontalGroup(
+            PanelVerTodasConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 879, Short.MAX_VALUE)
+        );
+        PanelVerTodasConsultasLayout.setVerticalGroup(
+            PanelVerTodasConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 509, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelVerTodasConsultas, "PanelVerTodasConsultas");
+
+        javax.swing.GroupLayout PanelVerHistorialLayout = new javax.swing.GroupLayout(PanelVerHistorial);
+        PanelVerHistorial.setLayout(PanelVerHistorialLayout);
+        PanelVerHistorialLayout.setHorizontalGroup(
+            PanelVerHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        PanelVerHistorialLayout.setVerticalGroup(
+            PanelVerHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelVerHistorial, "PanelVerHistorial");
+
+        javax.swing.GroupLayout PanelVerDatosPacienteLayout = new javax.swing.GroupLayout(PanelVerDatosPaciente);
+        PanelVerDatosPaciente.setLayout(PanelVerDatosPacienteLayout);
+        PanelVerDatosPacienteLayout.setHorizontalGroup(
+            PanelVerDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        PanelVerDatosPacienteLayout.setVerticalGroup(
+            PanelVerDatosPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanelVerDatosPaciente, "PanelVerDatosPaciente");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
+    private void btnAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrativoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelAdministrativo");
+    }//GEN-LAST:event_btnAdministrativoActionPerformed
+
+    private void btnPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacienteActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelCIPoDNI");
+    }//GEN-LAST:event_btnPacienteActionPerformed
+
+    private void btnMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelMedico");
+    }//GEN-LAST:event_btnMedicoActionPerformed
+
+    private void btnAccederPorCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederPorCIPActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelIntroducirCIP");
+    }//GEN-LAST:event_btnAccederPorCIPActionPerformed
+
+    private void btnAccederPorDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederPorDNIActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelIntroducirDNI");
+    }//GEN-LAST:event_btnAccederPorDNIActionPerformed
+
+    private void btnVolverAccesoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAccesoPacienteActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelPrincipal");
+    }//GEN-LAST:event_btnVolverAccesoPacienteActionPerformed
+
+    private void btnVolverMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMedicoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelPrincipal");
+    }//GEN-LAST:event_btnVolverMedicoActionPerformed
+
+    private void btnVolverAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAdministrativoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelPrincipal");
+    }//GEN-LAST:event_btnVolverAdministrativoActionPerformed
+
+    private void IntroducirCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirCIPActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_IntroducirCIPActionPerformed
+
+    private void btnEnterCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterCIPActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelPaciente");
+    }//GEN-LAST:event_btnEnterCIPActionPerformed
+
+    private void IntroducirDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IntroducirDNIActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelPaciente");
+    }//GEN-LAST:event_IntroducirDNIActionPerformed
+
+    private void btnAnadirMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirMedicamentoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelAnadirMedicamento");
+    }//GEN-LAST:event_btnAnadirMedicamentoActionPerformed
+
+    private void btnAnadirTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirTarjetaActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelAnadirTarjeta");
+    }//GEN-LAST:event_btnAnadirTarjetaActionPerformed
+
+    private void btnEliminarTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTarjetaActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelEliminarTarjeta");
+    }//GEN-LAST:event_btnEliminarTarjetaActionPerformed
+
+    private void btnEliminarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMedicamentoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelEliminarMedicamento");
+    }//GEN-LAST:event_btnEliminarMedicamentoActionPerformed
+
+    private void btnModificarMedicamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarMedicamentoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelModificarMedicamento");
+    }//GEN-LAST:event_btnModificarMedicamentoActionPerformed
+
+    private void btnModificarTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarTarjetaActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelModificarTarjeta");
+    }//GEN-LAST:event_btnModificarTarjetaActionPerformed
+
+    private void btnVerDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelVerDatos");
+    }//GEN-LAST:event_btnVerDatosActionPerformed
+
+    private void btnVerMedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerMedicamentosActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelVerMedicamentos");
+    }//GEN-LAST:event_btnVerMedicamentosActionPerformed
+
+    private void btnListadoMedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListadoMedicamentosActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelListadoMedicamentos");
+    }//GEN-LAST:event_btnListadoMedicamentosActionPerformed
+
+    private void btnListadoTarjetasCIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListadoTarjetasCIPActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelListadoTarjetasCIP");
+    }//GEN-LAST:event_btnListadoTarjetasCIPActionPerformed
+
+    private void btnListadoTarjetasDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListadoTarjetasDNIActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelListadoTarjetasDNI");
+    }//GEN-LAST:event_btnListadoTarjetasDNIActionPerformed
+
+    private void btnAnadirConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirConsultaActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelAnadirConsulta");
+    }//GEN-LAST:event_btnAnadirConsultaActionPerformed
+
+    private void btnDineroRecaudadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDineroRecaudadoActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelDineroRecaudado");
+    }//GEN-LAST:event_btnDineroRecaudadoActionPerformed
+
+    private void btnVerConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerConsultaActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelVerConsulta");
+    }//GEN-LAST:event_btnVerConsultaActionPerformed
+
+    private void btnVerTodasConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTodasConsultasActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelVerTodasConsulta");
+    }//GEN-LAST:event_btnVerTodasConsultasActionPerformed
+
+    private void btnVerDatosPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosPacienteActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelVerDatosPaciente");
+    }//GEN-LAST:event_btnVerDatosPacienteActionPerformed
+
+    private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed
+        CardLayout cardLayout = (CardLayout) this.getContentPane().getLayout();
+        cardLayout.show(this.getContentPane(), "PanelVerHistorial");
     }//GEN-LAST:event_btnVerHistorialActionPerformed
 
     /**
@@ -353,11 +912,32 @@ public class PantallaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField IntroducirCIP;
+    private javax.swing.JTextField IntroducirDNI;
     private javax.swing.JPanel PanelAdministrativo;
+    private javax.swing.JPanel PanelAnadirConsulta;
+    private javax.swing.JPanel PanelAnadirMedicamento;
+    private javax.swing.JPanel PanelAnadirTarjeta;
     private javax.swing.JPanel PanelCIPoDNI;
+    private javax.swing.JPanel PanelDineroRecaudado;
+    private javax.swing.JPanel PanelEliminarMedicamento;
+    private javax.swing.JPanel PanelEliminarTarjeta;
+    private javax.swing.JPanel PanelIntroducirCIP;
+    private javax.swing.JPanel PanelIntroducirDNI;
+    private javax.swing.JPanel PanelListadoMedicamentos;
+    private javax.swing.JPanel PanelListadoTarjetasCIP;
+    private javax.swing.JPanel PanelListadoTarjetasDNI;
     private javax.swing.JPanel PanelMedico;
+    private javax.swing.JPanel PanelModificarMedicamento;
+    private javax.swing.JPanel PanelModificarTarjeta;
     private javax.swing.JPanel PanelPaciente;
     private javax.swing.JPanel PanelPrincipal;
+    private javax.swing.JPanel PanelVerConsulta;
+    private javax.swing.JPanel PanelVerDatos;
+    private javax.swing.JPanel PanelVerDatosPaciente;
+    private javax.swing.JPanel PanelVerHistorial;
+    private javax.swing.JPanel PanelVerMedicamentos;
+    private javax.swing.JPanel PanelVerTodasConsultas;
     private javax.swing.JButton btnAccederPorCIP;
     private javax.swing.JButton btnAccederPorDNI;
     private javax.swing.JButton btnAdministrativo;
@@ -367,8 +947,10 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnDineroRecaudado;
     private javax.swing.JButton btnEliminarMedicamento;
     private javax.swing.JButton btnEliminarTarjeta;
+    private javax.swing.JButton btnEnterCIP;
+    private javax.swing.JButton btnEnterDNI;
     private javax.swing.JButton btnListadoMedicamentos;
-    private javax.swing.JButton btnListadoTarjetasCIp;
+    private javax.swing.JButton btnListadoTarjetasCIP;
     private javax.swing.JButton btnListadoTarjetasDNI;
     private javax.swing.JButton btnMedico;
     private javax.swing.JButton btnModificarMedicamento;
@@ -383,6 +965,5 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnVolverAccesoPaciente;
     private javax.swing.JButton btnVolverAdministrativo;
     private javax.swing.JButton btnVolverMedico;
-    private javax.swing.JButton btnVolverPaciente;
     // End of variables declaration//GEN-END:variables
 }
