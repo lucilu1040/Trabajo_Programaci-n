@@ -87,8 +87,11 @@ public class TarjetaSanitaria {
         return historialConsulta;
     }
 
-    public static String verDatos(TarjetaSanitaria tarjeta){
-        return "";
+  
+    
+
+    public String verDatos(TarjetaSanitaria tarjeta){
+        return ("TarjetaSanitaria:" + "\n nombre=" + nombre + " \n direccion=" + direccion + "\n telefono=" + telefono + "\n CIP=" + CIP + "\n DNI=" + DNI + "\n tipo=" + tipo);
 
     }
     public double getDescuento(){
