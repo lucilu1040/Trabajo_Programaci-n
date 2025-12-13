@@ -25,7 +25,7 @@ interface gestionAdministrativo {
     
     public void verDatos(TarjetaSanitaria tarjeta);
     
-    public void verMedicamentos(Medicamento medicamento);
+    public void verMedicamentos(String medicamento);
     
     public void listadoMedicamentos();
     
