@@ -12,5 +12,5 @@ interface gestionPaciente {
     
     
     public void verHistorial(TarjetaSanitaria nueva);
-    public void verDatosPaciente(TarjetaSanitaria tarjeta);
+    public String verDatosPaciente(TarjetaSanitaria tarjeta);
 }
