@@ -160,11 +160,11 @@ public class Sistema implements gestionPaciente, gestionMedico, gestionAdministr
     }
     
     //creo que esta función hay que cambiarla para que tenga sentido buscar por el nombre del medicamento y no el medicamento en si
-    public void verMedicamentos(Medicamento medicamento){
+    public void verMedicamentos(String medicamento){
         int i;
         for (i = 0; i < medicamentos.getMedicamento().size(); i++) {
             
-            if (medicamento == medicamentos.getMedicamento().get(i)) {
+            if (medicamento == medicamentos.getMedicamento().get(i).getNombre()) {
                 System.out.println(medicamentos.getMedicamento().get(i).toString());
             }
         }
